@@ -101,8 +101,9 @@ app.delete("/books/:id", (req, res)=>{
     res.json({message: "Libro borrado papi"});
 });
 
-app.listen(3000, ()=>{
-    // funcion call back que imprime el mensaje
-    console.log("servidor corriendo en el puerto 3000")
-}) 
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
 
